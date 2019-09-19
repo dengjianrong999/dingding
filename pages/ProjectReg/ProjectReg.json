@@ -1,0 +1,10 @@
+
+  {
+    "defaultTitle": "",
+    "pullRefresh": true,
+     "usingComponents": {
+       "load":"../components/load/load"
+     }
+
+  }
+

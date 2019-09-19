@@ -1,0 +1,150 @@
+page {
+  background-color: #efefef;
+}
+
+.page {
+  padding: 20rpx 20rpx 0 20rpx;
+}
+
+.topMain {
+  width: 100%;
+  background: #efefef;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+}
+
+.search {
+  width: calc(100% - 40rpx);
+  margin: 20rpx 0 20rpx 20rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+  background-color: #efefef;
+}
+
+.search .img {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.search .img image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.searchInput {
+  width: calc(100% - 90rpx);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.searchBut {
+  width: 80rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchInput input {
+  width: calc(100% - 0rpx);
+}
+
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #999;
+  font-size: 20rpx;
+}
+
+.searchFor {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+/* 列表 */
+
+.listContent {
+  margin-top: 100rpx;
+}
+
+.list {
+  width: 100%;
+  height: calc(100% - 100rpx);
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  padding: 0 30rpx;
+  border-radius: 8px;
+}
+
+.topTitle {
+  padding: 40rpx 5px;
+  position: relative;
+}
+
+.topTitle::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background: #fd9c2a;
+  position: absolute;
+  z-index: 33;
+  left: -10rpx;
+  top: 50rpx;
+  position: absolute;
+}
+
+.detail {
+  width: 100%;
+  padding: 0 0 40rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail text {
+  color: #666;
+}
+
+.status .pass {
+  color: #12b529;
+}
+
+.status .unpass {
+  color: #e71212;
+}
+
+.status .updata {
+  color: #156ce3;
+}
+
+.status .load {
+  color: #fdb02a;
+}
+
+.details {
+  color: #fff;
+  padding: 20rpx 30rpx;
+  font-size: 24rpx;
+  background-color: #fd9c2a;
+  border-radius: 50rpx;
+}
+
+
+
+
+
+
+
+
+ 

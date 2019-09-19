@@ -1,0 +1,36 @@
+<view class="page">
+  <view class="topLogo">
+    <image mode="scaleToFill" src="../../images/logo-3x.png"/>
+    <view class="title">项目成本核算管理系统</view>
+  </view>
+  <view class="typeS">
+    <view class="type" onTap="LinkToProReg">
+      <image mode="scaleToFill" src="../../images/dengji-3x.png"/>
+      <text>项目登记管理</text>
+    </view>
+    <view class="type typeRight" onTap="LinkToProKu">
+      <image mode="scaleToFill" src="../../images/xiangmukuguanli-3x.png"/>
+      <text>项目库管理</text>
+    </view>
+  </view>
+  <view class="typeS">
+    <view class="type"  onTap="LinkToProQX" >
+      <image mode="scaleToFill" src="../../images/quanxianguanli-3x.png"/>
+      <text>权限管理</text>
+    </view>
+    <view class="type typeRight" onTap="LinkToProPeople">
+      <image mode="scaleToFill" src="../../images/renyuanfeipei-3x.png"/>
+      <text>项目人员分配</text>
+    </view>
+  </view>
+  <view class="typeS">
+    <view class="type" onTap="LinkToDailyPaper" >
+      <image mode="scaleToFill" src="../../images/gerenribao-3x.png"/>
+      <text>个人日报</text>
+    </view>
+    <view class="type typeRight" onTap="LinkToProCost">
+      <image mode="scaleToFill" src="../../images/hesuan-3x.png"/>
+      <text>项目成本核算</text>
+    </view>
+  </view>
+</view>

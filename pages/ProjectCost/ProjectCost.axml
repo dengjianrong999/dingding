@@ -1,0 +1,76 @@
+
+<view class="page {{selectBoxIShow?'indexFixed':'' }}">
+  <view class="selectBox" a:if="{{selectBoxIShow==true}}" catchtouchmove="ture">
+    <view class="listBox">
+      <form onSubmit="formSubmit">
+        <view class="section section_gap">
+          <button class="save" formType="submit">确认</button>
+          <scroll-view class="scroll-view_H" scroll-y="{{true}}" style="width: 100%;max-height:400rpx;">
+            <checkbox-group name="checkbox1">
+              <label> 李明
+                <checkbox value="李明"/></label>
+              <label>王若
+                <checkbox value="王若"/></label>
+              <label> 李明
+                <checkbox value="李明"/></label>
+              <label>王若
+                <checkbox value="王若"/></label>
+              <label> 李明
+                <checkbox value="李明"/></label>
+              <label>王若
+                <checkbox value="王若"/></label>
+            </checkbox-group>
+          </scroll-view>
+        </view>
+      </form>
+    </view>
+  </view>
+  <view class="topsearch">
+    <view class="tabBar">
+      <view class="operBtn workTime {{select==1?'activeClass':''}}" onTap="selectBtn" data-num="1">工作日</view>
+      <view class="operBtn realTime {{select==2?'activeClass':''}}" onTap="selectBtn" data-num="2">实时工时</view>
+    </view>
+    <view class="searchContent">
+      <view class="section sectionT bordertop">
+        <view class="section-title">项目名称:</view>
+        <view class="pick">
+          <picker value="{{index}}" onChange="bindPickerChange" range="{{array}}">
+            <view class="picker">
+              {{array[index]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="section sectionT" onTap="isSshowTrue" a:if="{{tabShowPeople}}">
+        <view class="section__title">人员：</view>
+        <input name="input" placeholder="{{people}}" />
+      </view>
+      <view class="section sectionT borderbot">
+        <view class="section__title">时间段：</view>
+        <view class="page-body-button" type="primary" onTap="datePicker">{{startTime}}</view>
+        <text class="lin-">至</text>
+        <view class="page-body-button" type="primary" onTap="datePicker2">{{endTime}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="listContent {{tabShowPeople?'showTopClass':'showTopClassTb' }}">
+    <view class="list" a:for="{{Lists}}" key="{{item}}" onTap="LinkToreg">
+      <view class="topTitle">{{item.name}}</view>
+      <view class="detail">
+        <view> 项目编号：
+          <text>{{item.number}}</text>
+        </view>
+      </view>
+      <view class="detail">
+        <view> 创建人：
+          <text>{{item.creater}}</text>
+        </view>
+      </view>
+      <view class="detail">
+        <view> 创建时间：
+          <text>{{item.cseaterTime}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

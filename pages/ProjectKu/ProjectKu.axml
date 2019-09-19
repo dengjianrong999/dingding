@@ -1,0 +1,38 @@
+<view class="page">
+  <view class="topMain">
+    <view class="search">
+      <view class="searchInput">
+        <input placeholder-class="place-holder"  placeholder="输入项目编号、合同编号、项目名称" />
+        <view class="searchBut">
+          <image class="searchFor" mode="scaleToFill" src="../../images/sousuo-3x.png"/></view>
+      </view>
+    </view>
+  </view>
+  <view class="listContent">
+    <view class="list" a:for="{{Lists}}" key="{{item}}" onTap="LinkToreg">
+      <view class="topTitle">{{item.name}}</view>
+      <view class="detail">
+        <view> 项目编号：
+          <text>{{item.number}}</text>
+        </view>
+        <view class="status"> 审核状态：
+          <text a:if="{{item.status=='已通过'}}" class="pass">{{item.status}}</text>
+          <text a:if="{{item.status=='审批中'}}" class="load">{{item.status}}</text>
+          <text a:if="{{item.status=='已提交'}}" class="updata">{{item.status}}</text>
+          <text a:if="{{item.status=='不通过'}}" class="unpass">{{item.status}}</text>
+        </view>
+      </view>
+      <view class="detail">
+        <view> 创建人：
+          <text>{{item.creater}}</text>
+        </view>
+      </view>
+      <view class="detail">
+        <view> 创建时间：
+          <text>{{item.cseaterTime}}</text>
+        </view>
+        <view class="details">查看详情</view>
+      </view>
+    </view>
+  </view>
+</view>

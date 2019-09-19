@@ -1,0 +1,105 @@
+<view class="page" disable-scroll>
+  <form class="topMain" onSubmit="formSubmit" onReset="formReset">
+    <view class="section sectionT">
+      <view class="section__title">填写人员：</view>
+      <input name="input" placeholder="姜晓明" />
+    </view>
+    <view class="section sectionT">
+      <view class="section__title">日期：</view>
+      <view class="page-body-button" type="primary" onTap="datePicker">{{dateTime}}</view>
+    </view>
+    <view class="section sectionT">
+      <view class="section__title">类型：</view>
+      <view class="pick">
+        <picker value="{{index}}" onChange="bindPickerChange" range="{{array}}">
+          <view class="picker">
+              {{array[index]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="section sectionT">
+      <view class="section__title">项目状态：</view>
+      <checkbox-group name="checkbox" class="checkboxs">
+        <label>
+          <checkbox value="checkbox1"/>提交</label>
+        <label>
+          <checkbox value="checkbox2"/>未提交</label>
+      </checkbox-group>
+    </view>
+    <view class="section sectionT">
+      <view class="section__title">日期：</view>
+      <view class="page-body-button" type="primary" onTap="datePicker">{{dateTime}}</view>
+    </view>
+    <view class="topTitle">
+      <view>
+        <image mode="scaleToFill" src="../../images/ribao-3x.png"/>
+    日报内容1
+      </view>
+      <view>
+        <image mode="scaleToFill" src="../../images/shanchu-2x.png"/></view>
+    </view>
+    <view class="section sectionT topBorder">
+      <view class="section__title">项目名称：</view>
+      <view class="pick">
+        <picker value="{{index}}" onChange="projectChangee" range="{{projectList}}">
+          <view class="picker">
+              {{projectList[projectIndex]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="section section-textarea">
+      <view class="section__title">项目内容：</view>
+      <textarea onBlur="bindTextAreaBlur" auto-height placeholder="自动变高" />
+    </view>
+    <view class="section sectionT">
+      <view class="section__title">实际工时：</view>
+      <view class="page-body-button" type="primary" onTap="datePicker">{{dateTime}}</view>
+      <!--<text onTap="datePicker" name="input" placeholder="11111111111"></text> -->
+    </view>
+    <view class="section section-textarea">
+      <view class="section__title">备注：</view>
+      <textarea onBlur="bindTextAreaBlur" auto-height placeholder="自动变高" />
+    </view>
+    <view class="topTitle">
+      <view>
+        <image mode="scaleToFill" src="../../images/ribao-3x.png"/>
+    日报内容2
+      </view>
+      <view>
+        <image mode="scaleToFill" src="../../images/shanchu-2x.png"/></view>
+    </view>
+    <view class="section sectionT topBorder">
+      <view class="section__title">项目名称：</view>
+     <view class="pick">
+        <picker value="{{index}}" onChange="projectChangee" range="{{projectList}}">
+          <view class="picker">
+              {{projectList[projectIndex]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="section section-textarea">
+      <view class="section__title">项目内容：</view>
+      <textarea onBlur="bindTextAreaBlur" auto-height placeholder="自动变高" />
+    </view>
+    <view class="section sectionT">
+      <view class="section__title">实际工时：</view>
+      <input name="input" placeholder="乌鲁木齐环鹏有限公司项目" />
+    </view>
+    <view class="section section-textarea bottom">
+      <view class="section__title">备注：</view>
+      <textarea onBlur="bindTextAreaBlur" auto-height placeholder="自动变高" />
+    </view>
+    <!-- 项目管理信息 -->
+    <view class="btn-area">
+      <button formType="save" class="save">保存</button>
+      <button formType="submit" class="submit
+      ">提交
+      </button>
+    </view>
+    <view class="newAdd">
+      <image class="searchFor" mode="scaleToFill" src="../../images/xinzeng-3x.png"/></view></view>
+  </form>
+</view>

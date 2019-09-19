@@ -1,0 +1,37 @@
+@import "../ProjectRegMess/ProjectRegMess.acss";
+.newAdd{
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50rpx;
+  background-color: #fff;
+  border:1rpx solid #efefef;
+  position: fixed;
+  bottom:120rpx;
+  right: 0;
+  z-index:999;
+}
+.newAdd image{
+   width: 60rpx;
+  height: 60rpx;
+}
+.topBorder{
+  border-top:1rpx solid #efefef;
+}
+.topTitle{
+  justify-content: space-between;
+  align-items: center;
+}
+.topTitle view{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.bottom{
+  margin-bottom: 200rpx;
+}
+.pick{
+  width: 100%;
+}

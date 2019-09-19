@@ -1,0 +1,112 @@
+@import "../ProjectReg/ProjectReg.acss";
+@import "../JurisdictionManMess/JurisdictionManMess.acss";
+
+/*相对路径*/
+
+.indexFixed {
+  width: 100%;
+  position: fixed;
+}
+.save{
+  width: 100rpx;
+  position: absolute;
+  left: 20rpx;
+  top:0rpx;
+}
+.topsearch {
+  width: 100%;
+  padding: 20rpx;
+  background-color: #efefef;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+}
+
+.tabBar {
+  display: flex;
+}
+
+.tabBar view {
+  width: 50%;
+  height: 80rpx;
+  background-color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+.tabBar .activeClass {
+  background-color: #2983e8;
+  color: #fff;
+}
+
+.workTime {
+  border-radius: 8rpx 0 0 8rpx;
+}
+
+.realTime {
+  border-radius: 0 8rpx 8rpx 0;
+}
+
+.listContent {
+  overflow: scroll;
+  margin-top: 0rpx;
+}
+
+.searchContent {
+  margin-top: 20rpx;
+  border-radius: 8px;
+}
+
+.searchContent>view {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 20rpx;
+  background-color: #fff;
+}
+
+.section {
+  width: 100%;
+  display: flex;
+}
+
+.section-title {
+  width: 200rpx;
+}
+
+.section picker, .pick {
+  width: 100%;
+  padding-left: 20rpx;
+}
+
+.section_gap {
+  width: 100%;
+  min-height: 600rpx;
+  height: 600rpx;
+  overflow: scroll;
+  background: #FFF;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-top: 80rpx;
+}
+.lin-{
+  width: 50rpx;
+  text-align: center;
+}
+.bordertop{
+  border-radius: 8rpx 8rpx 0 0;
+}
+.borderbot{
+  border-radius: 0 0 8rpx 8rpx;
+  border-bottom: none;
+}
+.showTopClass{
+  margin-top: 350rpx;
+}
+.showTopClassTb{
+  margin-top: 270rpx;
+}

@@ -1,0 +1,164 @@
+<view class="page {{isShow?'curposition':''}}" disable-scroll>
+  <view class="topTitle">
+    <image mode="scaleToFill" src="../../images/xiangmuxinx-3x.png"/>
+    项目信息
+  </view>
+  <view class="selectCity" a:if="{{isShow}}">
+    <view class="selectctS">
+      <view class="adressCity">
+        <view class="addressC">
+          <view a:for="{{addressList}}" data-index="{{index}}"  class="{{index == activeINdex ? 'cur':''}}" onTap="chooseAdress">{{item.name}}</view>
+          <!-- <view class="city" onTap="chooseCityT">{{city}}</view>
+          <view class="city" onTap="chooseCountyT">{{county}}</view>
+          <view class="city" onTap="chooseAreaT">{{areaAdress}}</view> -->
+        </view>
+        <view class="save" onTap="saveAdress">确定</view>
+      </view>
+      <view class="citylist">
+        <block a:for="{{cityList}}" a:if="{{isShowcity}}">
+          <view data-select="{{item}}" class="{{item.province == catalogSelectCity ? 'active':''}}" onTap="chooseCity">{{item.province}}</view>
+        </block>
+        <block a:for="{{countyList}}" a:if="{{isShowCounty}}">
+          <view data-select="{{item}}" a:if="{{item.name == undefined}}" class="{{item == catalogSelectCounty ? 'active':''}}" onTap="chooseCounty">{{item}}</view>
+          <view data-select="{{item}}" a:if="{{item.name != undefined}}" class="{{item.name == catalogSelectCounty ? 'active':''}}" onTap="chooseCounty">{{item.name}}</view>
+        </block>
+        <block a:for="{{areaList}}" a:if="{{isShowArea}}">
+          <view data-select="{{item}}" class="{{item == catalogSelectArea ? 'active':''}}" onTap="chooseArea">{{item}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <form class="topMain" onSubmit="formSubmit" onReset="formReset">
+    <view class="section sectionT">
+      <view class="section__title">项目编号：</view>
+      <input name="proNum" placeholder-class="place-holder" value='{{formList.proNum}}' disabled="{{isDisabled}}" placeholder="年+三位流水" />
+    </view>
+    <view class="section sectionT">
+      <view class="section__title">项目名称：</view>
+      <input name="proName" disabled="{{isDisabled}}" placeholder-class="place-holder" placeholder="乌鲁木齐环鹏有限公司项目" />
+    </view>
+    <view class="section sectionT">
+      <view class="section__title">项目简称：</view>
+      <input name="proShort" disabled="{{isDisabled}}" placeholder-class="place-holder" placeholder="环鹏有限公司项目" />
+    </view>
+    <view class="section sectionT" onTap="tapname">
+      <view class="section__title">项目所在地：</view>
+      <input class="adressT" name="proAdress" disabled="{{true}}" value="{{adressT}}">
+    </view>
+    <view class="section sectionT">
+      <view class="section__title">详细地址：</view>
+      <input name="detailAdress" disabled="{{isDisabled}}" placeholder-class="place-holder" placeholder="街道、楼牌号等" />
+    </view>
+    <view class="section section-textarea">
+      <view class="section__title">客户信息：</view>
+      <textarea name="mess" disabled="{{isDisabled}}" onBlur="bindTextAreaBlur" maxlength=-1 auto-height placeholder="" />
+    </view>
+    <view class="section section-textarea">
+      <view class="section__title">情况说明：</view>
+      <textarea name="situation" disabled="{{isDisabled}}" onBlur="bindTextAreaBlur" maxlength=-1 auto-height placeholder="" />
+    </view>
+    <view class="section sectionT">
+      <view class="section__title">项目状态：</view>
+      <radio-group class="radio-group" onChange="radioChange" name="lib">
+        <label class="radio" a:for="{{items}}" key="label-{{index}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}" disabled="{{item.disabled}}" />
+          <text class="radio-text">{{item.value}}</text>
+        </label>
+      </radio-group>
+      <!--<checkbox-group name="checkbox" class="checkboxs"><label><checkbox disabled="{{isDisabled}}" name="box" value="checkbox1"/>售前</label><label><checkbox disabled="{{isDisabled}}" name="box" value="checkbox1"/>实施</label><label><checkbox disabled="{{isDisabled}}" name="box" value="checkbox1"/>运维</label><label><checkbox disabled="{{isDisabled}}" name="box" value="checkbox1"/>结束</label></checkbox-group> -->
+    </view>
+    <view class="section  sectionT switch">
+      <view class="section__title">是否启用：</view>
+      <view class="switch-list">
+        <view class="switch-item">
+          <switch checked green name="isStop" disabled="{{isDisabled}}" onChange="switchChange"/>
+        </view>
+      </view>
+    </view>
+    <view class="section sectionT">
+      <view class="section__title">创建人：</view>
+      <input name="buider" disabled="{{isDisabled}}" placeholder="" />
+    </view>
+    <view class="section sectionT">
+      <view class="section__title">创建时间：</view>
+      <input name="buiderTime" disabled="{{isDisabled}}" placeholder="" />
+    </view>
+    <!-- 领导审核信息 -->
+    <view class="topTitle botBorder ">
+      <image mode="scaleToFill" src="../../images/ribao-3x.png"/>
+    领导审核信息
+    </view>
+    <view class="section sectionT">
+      <view class="section__title">审核人：</view>
+      <input name="shPeople" disabled="{{isDisabled}}" placeholder-class="place-holder" placeholder="" />
+    </view>
+    <view class="section sectionT">
+      <view class="section__title">审核时间：</view>
+      <input name="shPeopleTime" disabled="{{isDisabled}}" placeholder-class="place-holder" placeholder="" />
+    </view>
+    <view class="section sectionT">
+      <view class="section__title">项目状态：</view>
+      <radio-group class="radio-group" onChange="radioChange" name="ProjZT">
+        <label class="radio" a:for="{{ProjZT}}" key="label-{{index}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}" disabled="{{item.disabled}}" />
+          <text class="radio-text">{{item.value}}</text>
+        </label>
+      </radio-group>
+    </view>
+    <view class="section section-textarea">
+      <view class="section__title">审核意见：</view>
+      <textarea onBlur="bindTextAreaBlur" name="YJ" disabled="{{isDisabled}}" auto-height placeholder="自动变高" />
+    </view>
+    <!-- 领导审核信息 -->
+    <!-- 合同信息 -->
+    <view class="topTitle botBorder">
+      <image mode="scaleToFill" src="../../images/hetong-3x.png"/>
+    项目信息
+    </view>
+    <view class="section sectionT">
+      <view class="section__title">合同编号：</view>
+      <input name="HTnum" placeholder-class="place-holder" disabled="{{isDisabled}}" placeholder="022331560" />
+    </view>
+    <view class="section sectionT">
+      <view class="section__title">签订时间：</view>
+      <input name="qdTIme" placeholder-class="place-holder" disabled="{{isDisabled}}" placeholder="2019-04-03 11:02:02" />
+    </view>
+    <!-- 合同信息 -->
+    <!-- 项目管理信息 -->
+    <view class="topTitle botBorder">
+      <image mode="scaleToFill" src="../../images/xinxi-3x.png"/>
+    项目管理信息
+    </view>
+    <view class="section sectionT">
+      <view class="section-title">项目经理：</view>
+      <picker onChange="bindPickerChange" value="{{index}}" range="{{array}}" disabled="{{isDisabled}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+    </view>
+    <view class="section sectionT">
+      <view class="section__title">启动时间：</view>
+      <input name="input" disabled="{{isDisabled}}" placeholder-class="place-holder" placeholder="2019-04-03 11:02:02" />
+    </view>
+    <view class="section section-textarea">
+      <view class="section__title">合同付款条款：</view>
+      <textarea onBlur="bindTextAreaBlur" disabled="{{isDisabled}}" maxlength=-1 auto-height placeholder="" />
+    </view>
+    <view class="section section-textarea">
+      <view class="section__title">实施周期：</view>
+      <textarea onBlur="bindTextAreaBlur" disabled="{{isDisabled}}" maxlength=-1 auto-height placeholder="" />
+    </view>
+    <view class="section sectionT bottom">
+      <view class="section__title">合同附件：</view>
+      <text class="upLoad" onTap="upLoadFile">上传</text>
+    </view>
+    <!-- 项目管理信息 -->
+    <view class="btn-area">
+      <button formType="save" disabled="{{isDisabled}}" class="save">保存</button>
+      <button formType="submit" disabled="{{isDisabled}}" class="submit
+      ">提交
+      </button>
+    </view>
+  </form>
+</view>

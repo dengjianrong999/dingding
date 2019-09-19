@@ -1,0 +1,6 @@
+
+
+@import "../ProjectReg/ProjectReg.acss"; /*相对路径*/
+.searchInput {
+  width: calc(100% - 0rpx);
+}

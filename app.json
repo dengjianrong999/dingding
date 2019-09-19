@@ -1,0 +1,21 @@
+{
+  "pages": [
+  "pages/ProjectRegMess/ProjectRegMess",
+    "pages/index/index",
+    "pages/dailyPaper/dailyPaper",
+    "pages/dailyPaperMess/dailyPaperMess",
+    "pages/ProjectPersonMan/ProjectPersonMan",
+    "pages/JurisdictionMan/JurisdictionMan",
+    "pages/ProjectReg/ProjectReg",
+    "pages/ProjectKu/ProjectKu",
+  
+    "pages/JurisdictionManMess/JurisdictionManMess",
+    "pages/ProjectCost/ProjectCost",
+    "pages/requset/requset"
+
+  ],
+  "window": {
+    "defaultTitle": "",
+    "titleBarColor": "#2983e8"
+  }
+}

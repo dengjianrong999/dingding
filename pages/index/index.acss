@@ -1,0 +1,52 @@
+ .topLogo {
+  width: 100%;
+  height: 500rpx;
+  text-align: center;
+  background: url(../../images/bg1-3x.png);
+  background-size: 100% 100%;
+}
+
+.topLogo image {
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 120rpx;
+}
+
+.topLogo .title {
+  color: #fff;
+  font-size: 50rpx;
+  font-family: "MicrosoftYaHei-Bold";
+  font-weight: 800;
+  margin-top: 20rpx;
+}
+
+/* 九宫格 */
+
+.typeS {
+  width: 100%;
+  display: flex;
+}
+
+.type {
+  width: 50%;
+  height: 250rpx;
+  float: left;
+  text-align: center;
+  border-bottom: 1px solid #EFEFEF;
+}
+
+.typeRight {
+  border-left: 1px solid #EFEFEF;
+}
+
+.type image {
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 40rpx;
+}
+
+.type text {
+  display: block;
+  margin-top: 20rpx;
+  font-size: 35rpx;
+}

@@ -1,0 +1,12 @@
+@import "../ProjectReg/ProjectReg.acss";
+/*相对路径*/
+
+.detail {
+  position: relative;
+}
+
+.details {
+  position: absolute;
+  right:0;
+  top:-40rpx;
+}

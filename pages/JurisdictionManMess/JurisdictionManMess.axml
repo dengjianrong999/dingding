@@ -1,0 +1,45 @@
+<view class="page">
+  <form class="topMain" onSubmit="saveMess" > 
+    <view class="section sectionT">
+      <view class="section__title">项目名称：</view>
+      <view class="pick">
+        <picker value="{{index}}" onChange="bindPickerChange" range="{{array}}">
+          <view class="picker" name="project">
+              {{array[index]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="section sectionT" onTap="isSshowTrue">
+      <view class="section__title">人员：</view>
+      <input name="input" placeholder="请输入人员" placeholder-class="place-holder"  value='{{people}}' disable="disable" />
+    </view>
+    <view class="saveBut">
+      <button class="saveAll" formType="submit">保存</button></view>
+  </form>
+  <view class="selectBox" a:if="{{selectBoxIShow==true}}" catchtouchmove="ture">
+    <view class="listBox">
+      <form onSubmit="formSubmit">
+        <view class="section section_gap">
+          <button class="save" formType="submit">确认</button>
+          <scroll-view class="scroll-view_H" scroll-y="{{true}}" style="width: 100%;max-height:400rpx;">
+            <checkbox-group name="checkbox1">
+              <label> 李明
+                <checkbox value="李明"/></label>
+              <label>王若
+                <checkbox value="王若"/></label>
+              <label> 李明
+                <checkbox value="李明"/></label>
+              <label>王若
+                <checkbox value="王若"/></label>
+              <label> 李明
+                <checkbox value="李明"/></label>
+              <label>王若
+                <checkbox value="王若"/></label>
+            </checkbox-group>
+          </scroll-view>
+        </view>
+      </form>
+    </view>
+  </view>
+</view>
