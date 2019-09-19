@@ -9,7 +9,7 @@ Page({
       { name: '结束', value: '结束' }
     ],
     ProjZT: [
-      { name: '通过', value: '通过' },
+      { name: '通过', value: '通过',checked: true },
       { name: '不通过', value: '不通过' },
     ],
     cityList: [
@@ -5198,8 +5198,9 @@ Page({
     catalogSelectCounty: '',//判断是否选中
     catalogSelectArea: '',//判断是否选中
     currentName: '',//判断是否选中
+    isShoA: true,
     addressList: [
-      { name: '请选择' },//省
+      { name: '' },//省
       { name: '' },//市
       { name: '', }//区
     ],
@@ -5273,18 +5274,10 @@ Page({
 
 
   tapname() {
+    if (this.data.isDisabled) return
     this.setData({
       isShow: true,
     })
-  },
-
-  removeByValue(arr, val) {
-    for (var i = 0; i < arr.length; i++) {
-      if (arr[i] == val) {
-        arr.splice(i, 1);
-        break;
-      }
-    }
   },
   // 省份选中
   chooseCity(data) {
@@ -5293,6 +5286,7 @@ Page({
     console.log(data.currentTarget.dataset.select.province, 'city')
     if (data.currentTarget.dataset.select.city.length == 1) {
       that.setData({
+        isShoA: false,
         catalogSelectCity: data.currentTarget.dataset.select.province,//当前选中的值
         'addressList[0].name': data.currentTarget.dataset.select.province,
         //城市列表显示 省份 地区隐藏 
@@ -5313,6 +5307,7 @@ Page({
 
     } else {
       that.setData({
+        isShoA: false,
         catalogSelectCity: data.currentTarget.dataset.select.province,//当前选中的值
         'addressList[0].name': data.currentTarget.dataset.select.province,
         //城市列表显示 省份 地区隐藏 
@@ -5351,6 +5346,7 @@ Page({
         countyList: that.data.NowCountyList,
       })
     } else {
+
       that.setData({//把选中值放入判断值
         catalogSelectCounty: data.currentTarget.dataset.select.name,
         'addressList[1].name': data.currentTarget.dataset.select.name,
@@ -5369,23 +5365,27 @@ Page({
       that.setData({
         countyList: that.data.NowCountyList,
       })
+
+
     }
   },
   // 地区选中
   chooseArea(data) {
+
     let that = this;
     let areaAdress = that.data.addressList[2].name
     that.setData({//把选中值放入判断值
       catalogSelectArea: data.currentTarget.dataset.select,
       'addressList[2].name': data.currentTarget.dataset.select,
     })
-    that.data.NowAreaList = that.data.NowAreaList.filter(item => {
+    that.data.areaList = that.data.areaList.filter(item => {
       return item !== that.data.addressList[2].name;
     })
     var currentItem = data.currentTarget.dataset.select;
-    that.data.NowAreaList.unshift(currentItem);
+    that.data.areaList.unshift(currentItem);
+          console.log(this.data.areaList)
     that.setData({
-      areaList: that.data.NowAreaList,
+      areaList: that.data.areaList,
     })
   },
 
@@ -5408,7 +5408,7 @@ Page({
         isShowcity: false,
         isShowArea: false,
       })
-    } else if (this.data.activeINdex == 1) {//县
+    } else if (this.data.activeINdex == 2) {//县
       this.setData({
         isShowCounty: false,
         isShowcity: false,
@@ -5417,7 +5417,7 @@ Page({
     }
   },
   saveAdress() {
-    let adress='';
+    let adress = '';
     console.log(adress)
     this.data.addressList.map((item) => {
       adress += item.name;
